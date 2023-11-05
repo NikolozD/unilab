@@ -1,0 +1,95 @@
+.registration_background {
+    font-family: Montserrat;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration_container {
+    padding: 25px 120px 25px;
+    
+    background-color: white;
+    border-radius: 25px ;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    width:fit-content ;
+    gap: 10px;
+    
+    
+}
+
+.registration_container h3 {
+    font-size: 64px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.registration_container label {
+    font-size: 36px;
+    margin-bottom: 45px;
+}
+
+.registration_container button:enabled:hover{
+    cursor: pointer;
+    opacity: 90%;
+}
+.registration_container button:disabled {
+    opacity: 50%;
+}
+
+.registration_imageIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background-color: #E6EBFF;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 50px;
+    
+}
+.registration_imageIcon label {
+    margin: 0;
+}
+.registration_imageIcon img {
+    width: 100%;
+    height: 100%;
+   
+}
+#preview {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+}
+
+.registration_imageIcon  input {
+    display: none;
+}
+
+#name {
+    height: 101px;
+    border: none;
+    background-color: #E6EBFF;
+    width: 480px;
+    font-size: 36px;
+    font-family: Montserrat;
+    padding: 0 20px 0
+}
+
+.registration_container button {
+    background-color: #4980C0;
+    width: 395px;
+    height: 75px;
+    border-radius: 50px;
+    border: none;
+    font-size: 24px;
+    color: white;
+    margin: 30px 0 ;
+}
+
