@@ -1,21 +1,24 @@
 import { useEffect, useState } from "react";
 import StudentData from "../../../StudentData";
+import Pagination from "../pagination/pagination";
 function StudentsTable({ filterData }) {
-  const [filtereStudentInfo, setFilteredStudentInfo] = useState(StudentData);
-  const [page, setPage] = useState(1);
+  const [filteredStudentInfo, setFilteredStudentInfo] = useState(StudentData);
   const [curPageStudentInfo, setCurPageStudentInfo] = useState([]);
-  useEffect(() => {
-    setCurPageStudentInfo(() => {
-      const newState = [];
-      for (let i = (page - 1) * 10; i < (page - 1) * 10 + 10; i++) {
-        if (filtereStudentInfo[i]) {
-          newState.push(filtereStudentInfo[i]);
-        }
-      }
+  const [curPage, setCurPage] = useState(1);
+  const [studentsPerPage, setStudentsPerPage] = useState(10);
 
-      return newState;
-    });
-  }, [page, filtereStudentInfo]);
+  const paginate = (pageNumber) => {
+    setCurPage(pageNumber);
+  };
+
+  useEffect(() => {
+    setCurPageStudentInfo(() =>
+      filteredStudentInfo.slice(
+        (curPage - 1) * studentsPerPage,
+        curPage * studentsPerPage
+      )
+    );
+  }, [curPage, filteredStudentInfo]);
 
   useEffect(() => {
     setFilteredStudentInfo(
@@ -26,29 +29,40 @@ function StudentsTable({ filterData }) {
       )
     );
 
-    setPage(1);
+    setCurPage(1);
   }, [filterData]);
+
   return (
-    <table className="form_table">
-      <thead className="form_table_header">
-        <th>სტუდენტის სახელი და გვარი</th>
-        <th>სტატუსი</th>
-        <th>სქესი</th>
-        <th>ქულები</th>
-        <th>პირადი ნომერი</th>
-      </thead>
-      <tbody>
-        {curPageStudentInfo.map((student) => (
-          <tr className="form_table_body">
-            <td>{student.name}</td>
-            <td>{student.status}</td>
-            <td>{student.sex}</td>
-            <td>{student.score}</td>
-            <td>{student.pnumber}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <>
+      <table className="form_table">
+        <thead className="form_table_header">
+          <th>სტუდენტის სახელი და გვარი</th>
+          <th>სტატუსი</th>
+          <th>სქესი</th>
+          <th>ქულები</th>
+          <th>პირადი ნომერი</th>
+        </thead>
+        <tbody>
+          {curPageStudentInfo.map((student) => (
+            <tr className="form_table_body">
+              <td>{student.name}</td>
+              <td>{student.status}</td>
+              <td>{student.sex}</td>
+              <td>{student.score}</td>
+              <td>{student.pnumber}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div>
+        <Pagination
+          totalStudents={filteredStudentInfo.length}
+          studentsPerPage={studentsPerPage}
+          paginate={paginate}
+          curPage={curPage}
+        />
+      </div>
+    </>
   );
 }
 

@@ -1,20 +1,18 @@
 import { useEffect, useState } from "react";
 import "./Registration.css";
+import { useNavigate } from "react-router-dom";
 function Registration() {
-  const [photo, setPhoto] = useState("");
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [preview, setPreview] = useState("");
-  const [add, setadd] = useState();
+  const [photo, setPhoto] = useState();
   useEffect(() => {
     if (!photo) {
       setPreview("");
       return;
     }
-    const objectUrl = URL.createObjectURL(photo);
-    console.log(objectUrl);
-    setPreview(objectUrl);
 
-    return () => URL.revokeObjectURL(objectUrl);
+    setPreview(photo);
   }, [photo]);
 
   const getBase64 = (file) => {
@@ -29,9 +27,9 @@ function Registration() {
   };
   const handleClick = (e) => {
     e.preventDefault();
-    localStorage.setItem("image", add);
+    localStorage.setItem("image", photo);
     localStorage.setItem("name", name);
-    console.log("asdf");
+    navigate("/form", { replace: true });
   };
   return (
     <div className="registration_background">
@@ -54,10 +52,9 @@ function Registration() {
             type="file"
             name="photo"
             id="photo"
-            onChange={(e) => (
-              e.target.files[0] ? setPhoto(e.target.files[0]) : null,
-              getBase64(e.target.files[0]).then((base64) => setadd(base64))
-            )}
+            onChange={(e) =>
+              getBase64(e.target.files[0]).then((base64) => setPhoto(base64))
+            }
           />
         </div>
         <label htmlFor="name">fill in your name</label>
