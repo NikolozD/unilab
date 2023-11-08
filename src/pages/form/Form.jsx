@@ -24,7 +24,7 @@ function Form() {
         <NavBar />
         <div className="form_secondaryNavbar">
           <button className="form_filter" onClick={toggleFilters}>
-            <img src="public/assets/filter-svgrepo-com (1) 1.png" alt="" />
+            <img src="/assets/filter-svgrepo-com (1) 1.png" alt="" />
             <span>Filter</span>
           </button>
           <input type="search" />

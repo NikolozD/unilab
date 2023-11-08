@@ -25,7 +25,7 @@ function Filter({ setFilterData, filterData }) {
       <ul>
         <li>
           <div onClick={changeStudenStatusState}>
-            <img src="public/assets/chevron-right.png" alt="" />
+            <img src="/assets/chevron-right.png" alt="" />
             სტუდენტის სტატუსი
           </div>
           <ul
@@ -57,7 +57,7 @@ function Filter({ setFilterData, filterData }) {
         </li>
         <li>
           <div onClick={changeSexState}>
-            <img src="public/assets/chevron-right.png" alt="" />
+            <img src="/assets/chevron-right.png" alt="" />
             სქესი
           </div>
           <ul className={showSex ? "form_filter_sex shows" : "form_filter_sex"}>
