@@ -2,7 +2,7 @@
   width: 100%;
   height: 100%;
   background-color: black;
-  background-image: url("public/assets/stars.png");
+  background-image: url("../../../public/assets/stars.png");
   background-size: cover;
   display: flex;
   justify-content: center;
