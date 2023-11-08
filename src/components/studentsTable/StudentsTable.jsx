@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import StudentData from "../../../StudentData";
-import Pagination from "../pagination/pagination";
+import Pagination from "../pagination/Pagination";
 import "./StudentsTable.css";
 function StudentsTable({ filterData }) {
   const [filteredStudentInfo, setFilteredStudentInfo] = useState(StudentData);
