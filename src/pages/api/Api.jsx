@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Api.css";
-import Pagination from "../../components/pagination/pagination";
+import Pagination from "../../components/pagination/Pagination";
 import NavBar from "../../components/navBar/NavBar";
 
 function Api() {
