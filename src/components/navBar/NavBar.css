@@ -1,0 +1,33 @@
+.form_navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 40px;
+  font-weight: bold;
+}
+.form_navbar > :first-child {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 55px;
+  border-bottom: 1px solid #ebebeb;
+  border-right: 1px solid #ebebeb;
+}
+
+.form_userInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 1px solid #ebebeb;
+  padding: 0 20px;
+}
+.form_userInfo p {
+  font-weight: 600;
+}
+
+.form_userInfo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+}

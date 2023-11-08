@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import "./Api.css";
 import Pagination from "../../components/pagination/pagination";
+import NavBar from "../../components/navBar/NavBar";
 
 function Api() {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const usersPerPage = 9;
+  const usersPerPage = 6;
   useEffect(() => {
     fetchData();
   });
@@ -26,24 +27,27 @@ function Api() {
   };
 
   return (
-    <div className="api_background">
-      <div className="api_container">
-        {currentUsers.map((user) => (
-          <div key={user.id} className="api_card">
-            <h2>{user.title}</h2>
-            <span>{user.body}</span>
-          </div>
-        ))}
+    <>
+      <div className="api_background">
+        <NavBar />
+        <div className="api_container">
+          {currentUsers.map((user) => (
+            <div key={user.id} className="api_card">
+              <h2>{user.title}</h2>
+              <span>{user.body}</span>
+            </div>
+          ))}
+        </div>
+        <div>
+          <Pagination
+            totalStudents={users.length}
+            studentsPerPage={usersPerPage}
+            paginate={paginate}
+            curPage={currentPage}
+          />
+        </div>
       </div>
-      <div>
-        <Pagination
-          totalStudents={users.length}
-          studentsPerPage={usersPerPage}
-          paginate={paginate}
-          curPage={currentPage}
-        />
-      </div>
-    </div>
+    </>
   );
 }
 

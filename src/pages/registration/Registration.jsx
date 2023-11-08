@@ -52,6 +52,7 @@ function Registration() {
             type="file"
             name="photo"
             id="photo"
+            accept="image/png, image/gif, image/jpeg"
             onChange={(e) =>
               getBase64(e.target.files[0]).then((base64) => setPhoto(base64))
             }

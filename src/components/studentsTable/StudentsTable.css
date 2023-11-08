@@ -1,0 +1,56 @@
+.form_table {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  width: 1201px;
+  height: 656px;
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow-x: scroll;
+}
+
+.form_table_header tr {
+  display: flex;
+
+  gap: 30px;
+  padding: 10px 67px;
+  border-bottom: 1px solid #315c8e;
+}
+
+.form_table_header tr th {
+  flex-basis: 50%;
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.form_table_body {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  gap: 30px;
+  padding: 10px 67px;
+  margin: 15px 0;
+  border-bottom: 1px solid rgba(126, 126, 126, 0.092);
+}
+.form_table_body * {
+  flex-basis: 16%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.form_secondaryNavbar input {
+  width: 263px;
+  height: 37px;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+  background: url("public/assets/search.png") no-repeat scroll 7px;
+  background-color: white;
+  padding-left: 30px;
+}

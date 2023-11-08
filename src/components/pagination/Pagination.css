@@ -1,21 +1,21 @@
 .pagination {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  justify-content: center;
+  gap: 10px;
 }
-.page_item{
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    padding: 0
+.page_item {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  padding: 0;
 }
 .page_link {
-    color: white;
-    cursor: pointer;
-    
+  color: white;
+  cursor: pointer;
 }
 
 .page_link.curpage {
-    color: blue;
+  color: blue;
 }
-
